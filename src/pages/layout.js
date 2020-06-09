@@ -11,7 +11,7 @@ import Login from './login/index';
 function PrivateRoute (props) {
 	return (
 		<Route path={props.path} exact render={() => {
-			return false ? <div>{props.component}</div> : <Redirect to="/login" />
+			return true ? <div>{props.component}</div> : <Redirect to="/login" />
 		}} ></Route>
 	);
 }
@@ -19,7 +19,7 @@ function PrivateRoute (props) {
 function PublicRoute (props) {
 	return (
 		<Route path={props.path} exact render={() => {
-			return false ? <Redirect to="/dashboard" /> : <div>{props.component}</div>
+			return true ? <Redirect to="/dashboard" /> : <div>{props.component}</div>
 		}} ></Route>
 	);
 }
